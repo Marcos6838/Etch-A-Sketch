@@ -7,22 +7,26 @@ reset.addEventListener('click',function(e){
 
 });
 
+let color = document.querySelector('#color');
+color.addEventListener('click',function(e){
+    let color = prompt('choose a new color');
+    newSquareColor = document.querySelector('.squares')
+    newSquareColor.backgroundColor = 'pink';
+});
+
 function gridMaker(grid){
   
-   
     container.style.gridTemplateColumns = `repeat(${grid}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${grid}, 1fr)`;
     for(i = 0; i < grid*grid; i++){
         const squares =document.createElement('div');
         squares.classList.add('squares')
         container.appendChild(squares);
-        
-        
     };
     hover();
 };
 
-gridMaker(grid = 10);
+gridMaker(grid = 16);
 
 //hover function
 function hover(){
@@ -34,18 +38,11 @@ function hover(){
 });
 }
 
-
-
 function eraseGrid(){
-        
         while(container.hasChildNodes()){
-            container.removeChild(container.lastChild);
-            
-            
-            
+            container.removeChild(container.lastChild); 
         };
-        };
-
+};
 
 function newGrid(){
     eraseGrid();
