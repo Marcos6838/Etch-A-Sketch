@@ -31,7 +31,7 @@ h1{
     display: grid;
     width: 40em;
     height: 40em;
-    border: solid green;
+    border: solid black;
     text-align: center;
     margin: auto;
     
@@ -49,3 +49,6 @@ h1{
 
 }
 
+.hoverRainbow{
+    background-color: white;
+}
