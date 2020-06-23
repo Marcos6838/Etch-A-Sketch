@@ -7,12 +7,23 @@ reset.addEventListener('click',function(e){
 
 });
 
-// change hover effect to rainbow 
-let color = document.querySelector('#rainbow');
+//changes color of the hover effect
+let color = document.querySelector('#color');
 color.addEventListener('click',function(e){
     let userColorChoice = String(prompt("enter your color"));
     hover(userColorChoice);
    
+});
+
+//makes the hover effect rainbow
+
+let rainbow = document.querySelector('#rainbow');
+rainbow.addEventListener('click',function(e){ 
+    let userColorChoice = "rgb( " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")";
+    
+    hover(userColorChoice);
+    
+
 });
 
 function gridMaker(grid){
