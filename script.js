@@ -7,11 +7,12 @@ reset.addEventListener('click',function(e){
 
 });
 
-let color = document.querySelector('#color');
+// change hover effect to rainbow 
+let color = document.querySelector('#rainbow');
 color.addEventListener('click',function(e){
-    let color = prompt('choose a new color');
-    newSquareColor = document.querySelector('.squares')
-    newSquareColor.backgroundColor = 'pink';
+    let userColorChoice = String(prompt("enter your color"));
+    hover(userColorChoice);
+   
 });
 
 function gridMaker(grid){
@@ -20,8 +21,10 @@ function gridMaker(grid){
     container.style.gridTemplateRows = `repeat(${grid}, 1fr)`;
     for(i = 0; i < grid*grid; i++){
         const squares =document.createElement('div');
-        squares.classList.add('squares')
+        squares.classList.add('squares');
         container.appendChild(squares);
+        
+   
     };
     hover();
 };
@@ -29,9 +32,11 @@ function gridMaker(grid){
 gridMaker(grid = 16);
 
 //hover function
-function hover(){
+function hover(userColorChoice){
  document.querySelectorAll('.squares').forEach(item => {
     item.addEventListener('mouseover', event => {
+        
+        item.style.backgroundColor = userColorChoice;
         item.classList.add('hover');
     })
         
