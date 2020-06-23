@@ -15,16 +15,6 @@ color.addEventListener('click',function(e){
    
 });
 
-//makes the hover effect rainbow
-
-let rainbow = document.querySelector('#rainbow');
-rainbow.addEventListener('click',function(e){ 
-    let userColorChoice = "rgb( " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")";
-    
-    hover(userColorChoice);
-    
-
-});
 
 function gridMaker(grid){
   
@@ -53,6 +43,30 @@ function hover(userColorChoice){
         
 });
 }
+
+//makes the hover effect rainbow
+
+let rainbow = document.querySelector('#rainbow');
+rainbow.addEventListener('click',function(e){ 
+    
+    rainbowHover();
+});
+
+function rainbowHover(){
+    
+    document.querySelectorAll('.squares').forEach(item =>{  
+        item.addEventListener('mouseenter', event => {
+            let userColorChoice = "rgb( " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")";
+        item.style.backgroundColor = userColorChoice;
+        })
+        
+        
+    })
+    
+    
+    
+}
+
 
 function eraseGrid(){
         while(container.hasChildNodes()){
