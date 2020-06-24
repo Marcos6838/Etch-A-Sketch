@@ -54,20 +54,38 @@ rainbow.addEventListener('click',function(e){
 
 function rainbowHover(){
     
-    document.querySelectorAll('.squares').forEach(item =>{  
+    document.querySelectorAll('.squares').forEach(item => {  
         item.addEventListener('mouseenter', event => {
             let userColorChoice = "rgb( " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ", " + Math.floor(Math.random() * 256) + ")";
-        item.style.backgroundColor = userColorChoice;
+            item.style.backgroundColor = userColorChoice;
         })
-        
-        
     })
-    
-    
-    
 }
 
+///Makes the grayscale effect
 
+let grayscale = document.querySelector('#grayscale');
+grayscale.addEventListener('click',function(e){
+    grayScale();
+
+});
+
+function grayScale(){
+    document.querySelectorAll('.squares').forEach(item => {
+        item.addEventListener('mouseenter', event => {
+            if(Array.from(item.classList).indexOf('invisiblack')==-1){
+                item.classList.add('invisiblack');
+                item.style.opacity=0.1;
+                item.style.background="black";
+                }
+           else{
+            item.style.opacity =+item.style.opacity+0.1
+           }
+        })
+      
+    
+    });
+}
 function eraseGrid(){
         while(container.hasChildNodes()){
             container.removeChild(container.lastChild); 
