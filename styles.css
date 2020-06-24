@@ -52,3 +52,9 @@ h1{
 .hoverRainbow{
     background-color: white;
 }
+
+.invisiblack{
+    background: black;
+    opacity:0.1;
+    border:1px solid black;
+}
